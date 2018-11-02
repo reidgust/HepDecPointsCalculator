@@ -10,12 +10,6 @@ import Foundation
 import Eureka
 import SnapKit
 
-//protocol GenericRow {}
-
-//class MyDecimalRow : DecimalRow, GenericRow {}
-
-//class MyTextRow : TextRow, GenericRow {}
-
 class EntryViewController: FormViewController {
     let isDec : Bool
     var dayOneScores : [Int]
@@ -39,6 +33,40 @@ class EntryViewController: FormViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    func getEventsSec(_ title: String, decimalEvents: [Event], textEvents: [Event]) -> Section {
+        let sec = Section(title)
+        for i in 0..<decimalEvents.count {
+            let decRow = DecimalRow(){ row in
+                setupEvent(row: row, event: decimalEvents[i], index: i)
+            }
+            sec.append(decRow)
+        }
+        for i in 0..<textEvents.count {
+            let textRow = TextRow(){ row in
+                setupEvent(row: row, event: textEvents[i], index: i + decimalEvents.count)
+            }
+            sec.append(textRow)
+        }
+        return sec
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        form
+            //<<< SegmentedRow
+            +++ getEventsSec("Day1Dec",decimalEvents: [Event.hundy, Event.LJ,Event.SP,Event.HJ], textEvents: [Event.fourHundy])
+            +++ getEventsSec("Day1Hep",decimalEvents: [Event.hundyHurdles, Event.HJ,Event.SP,Event.twoHundy], textEvents: [])
+            <<< LabelRow("Day 1")
+
+            +++ getEventsSec("Day2Dec",decimalEvents: [Event.hurdles, Event.disc,Event.PV,Event.Jav], textEvents: [Event.fifteen])
+            +++ getEventsSec("Day2Hep",decimalEvents: [Event.LJ, Event.Jav], textEvents: [Event.eightHundy])
+            <<< LabelRow("Day2")
+            <<< LabelRow("Overall")
+
+        form.sectionBy(tag: "Day1Dec")?.hidden = true
+        form.sectionBy(tag: "Day2Hep")?.hidden = true
+    }
     
     private func updateLabels(dayIndex:Int) {
         let val = dayIndex == 0 ? self.dayOneScores.reduce(0,+) : self.dayTwoScores.reduce(0,+)
@@ -53,7 +81,7 @@ class EntryViewController: FormViewController {
         }
     }
     
-    fileprivate func setupEvent(row:DecimalRow,event: Event, index:Int) {
+    private func setupEvent(row:DecimalRow,event: Event, index:Int) {
         row.title = event.rawValue
         row.onChange({ (timeRow) in
             var points : Int = -1
@@ -78,7 +106,7 @@ class EntryViewController: FormViewController {
         })
     }
 
-    fileprivate func setupEvent(row:TextRow,event: Event, index: Int) {
+    private func setupEvent(row:TextRow,event: Event, index: Int) {
         row.title = event.rawValue
         row.onChange({ (timeRow) in
             var points : Int = -1
@@ -104,77 +132,3 @@ class EntryViewController: FormViewController {
     }
     
 }
-
-class DecathlonEntryViewController: EntryViewController {
-    override func viewDidLoad() {
-    super.viewDidLoad()
-        form +++ Section("Day 1")
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.hundy, index: 0)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.LJ, index: 1)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.SP, index: 2)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.HJ, index: 3)
-        }
-        <<< TextRow(){ row in
-            setupEvent(row: row, event: Event.fourHundy, index: 4)
-        }
-        <<< LabelRow("Day1")
-        +++ Section("Day 2")
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.hurdles, index: 5)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.disc, index: 6)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.PV, index: 7)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.Jav, index: 8)
-        }
-        <<< TextRow(){ row in
-            setupEvent(row: row, event: Event.fifteen, index: 9)
-        }
-        <<< LabelRow("Day2")
-        <<< LabelRow("Overall")
-    }
-}
-
-class HeptathlonEntryViewController: EntryViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        form +++ Section("Day 1")
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.hundyHurdles, index: 0)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.HJ, index: 1)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.SP, index: 2)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.twoHundy, index: 3)
-        }
-        <<< LabelRow("Day1")
-        +++ Section("Day 2")
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.LJ, index: 4)
-        }
-        <<< DecimalRow(){ row in
-            setupEvent(row: row, event: Event.Jav, index: 5)
-        }
-        <<< TextRow(){ row in
-            setupEvent(row: row, event: Event.eightHundy, index: 6)
-        }
-        <<< LabelRow("Day2")
-        <<< LabelRow("Overall")
-    }
-}
-

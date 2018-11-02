@@ -15,7 +15,7 @@
 		3091CB2C218B997A00300283 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB29218B997A00300283 /* add.png */; };
 		3091CB2D218B997A00300283 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB2A218B997A00300283 /* logo.jpg */; };
 		3091CB2E218B997A00300283 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB2B218B997A00300283 /* menu.png */; };
-		3091CB30218B9CBF00300283 /* DecathlonEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091CB2F218B9CBF00300283 /* DecathlonEntryViewController.swift */; };
+		3091CB30218B9CBF00300283 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091CB2F218B9CBF00300283 /* EntryViewController.swift */; };
 		3091CB34218BB49B00300283 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091CB33218BB49B00300283 /* Calculator.swift */; };
 		3091CB36218C1EBD00300283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB35218C1EBD00300283 /* Assets.xcassets */; };
 		3091CB3C218C202C00300283 /* logo_60.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB38218C202C00300283 /* logo_60.jpeg */; };
@@ -81,7 +81,7 @@
 		3091CB29218B997A00300283 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = "Points Calculator/Images/add.png"; sourceTree = SOURCE_ROOT; };
 		3091CB2A218B997A00300283 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = "Points Calculator/Images/logo.jpg"; sourceTree = SOURCE_ROOT; };
 		3091CB2B218B997A00300283 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "Points Calculator/Images/menu.png"; sourceTree = SOURCE_ROOT; };
-		3091CB2F218B9CBF00300283 /* DecathlonEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecathlonEntryViewController.swift; sourceTree = "<group>"; };
+		3091CB2F218B9CBF00300283 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		3091CB33218BB49B00300283 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		3091CB35218C1EBD00300283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3091CB38218C202C00300283 /* logo_60.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_60.jpeg; sourceTree = SOURCE_ROOT; };
@@ -199,7 +199,7 @@
 				30CDE1022187CCD9007336AE /* LaunchScreen.storyboard */,
 				30CDE1052187CCD9007336AE /* Info.plist */,
 				3091CB20218B891200300283 /* TitleView.swift */,
-				3091CB2F218B9CBF00300283 /* DecathlonEntryViewController.swift */,
+				3091CB2F218B9CBF00300283 /* EntryViewController.swift */,
 				3091CB33218BB49B00300283 /* Calculator.swift */,
 				3091CB52218C922B00300283 /* Constants.swift */,
 			);
@@ -373,7 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CDE0F82187CCCE007336AE /* RootViewController.swift in Sources */,
-				3091CB30218B9CBF00300283 /* DecathlonEntryViewController.swift in Sources */,
+				3091CB30218B9CBF00300283 /* EntryViewController.swift in Sources */,
 				3091CB34218BB49B00300283 /* Calculator.swift in Sources */,
 				30CDE0FC2187CCCE007336AE /* ModelController.swift in Sources */,
 				30CDE0FA2187CCCE007336AE /* DataViewController.swift in Sources */,

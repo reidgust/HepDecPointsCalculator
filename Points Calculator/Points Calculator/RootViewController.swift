@@ -14,7 +14,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pageViewController = HeptathlonEntryViewController(isDec:false)
+        self.pageViewController = EntryViewController(isDec:false)
         //self.pageViewController!.delegate = self
         self.addChild(self.pageViewController!)
         self.view.addSubview(self.pageViewController!.view)
