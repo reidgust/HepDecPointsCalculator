@@ -17,12 +17,25 @@
 		3091CB2E218B997A00300283 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB2B218B997A00300283 /* menu.png */; };
 		3091CB30218B9CBF00300283 /* DecathlonEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091CB2F218B9CBF00300283 /* DecathlonEntryViewController.swift */; };
 		3091CB34218BB49B00300283 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091CB33218BB49B00300283 /* Calculator.swift */; };
+		3091CB36218C1EBD00300283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB35218C1EBD00300283 /* Assets.xcassets */; };
+		3091CB3C218C202C00300283 /* logo_60.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB38218C202C00300283 /* logo_60.jpeg */; };
+		3091CB3D218C202C00300283 /* logo_40.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB39218C202C00300283 /* logo_40.jpeg */; };
+		3091CB3E218C202C00300283 /* logo_58.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB3A218C202C00300283 /* logo_58.jpeg */; };
+		3091CB3F218C202C00300283 /* logo_20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB3B218C202C00300283 /* logo_20.jpeg */; };
+		3091CB44218C212D00300283 /* logo_180.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB40218C212D00300283 /* logo_180.jpeg */; };
+		3091CB45218C212D00300283 /* logo_80.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB41218C212D00300283 /* logo_80.jpeg */; };
+		3091CB46218C212D00300283 /* logo_120.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB42218C212D00300283 /* logo_120.jpeg */; };
+		3091CB47218C212D00300283 /* logo_87.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB43218C212D00300283 /* logo_87.jpeg */; };
+		3091CB4D218C226400300283 /* logo_167.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB48218C226400300283 /* logo_167.jpeg */; };
+		3091CB4E218C226400300283 /* logo_76.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB49218C226400300283 /* logo_76.jpeg */; };
+		3091CB4F218C226400300283 /* logo_29.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB4A218C226400300283 /* logo_29.jpeg */; };
+		3091CB50218C226400300283 /* logo_152.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB4B218C226400300283 /* logo_152.jpeg */; };
+		3091CB51218C226400300283 /* logo_1024.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB4C218C226400300283 /* logo_1024.jpeg */; };
 		30CDE0F62187CCCE007336AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0F52187CCCE007336AE /* AppDelegate.swift */; };
 		30CDE0F82187CCCE007336AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0F72187CCCE007336AE /* RootViewController.swift */; };
 		30CDE0FA2187CCCE007336AE /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0F92187CCCE007336AE /* DataViewController.swift */; };
 		30CDE0FC2187CCCE007336AE /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0FB2187CCCE007336AE /* ModelController.swift */; };
 		30CDE0FF2187CCCE007336AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CDE0FD2187CCCE007336AE /* Main.storyboard */; };
-		30CDE1012187CCD9007336AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CDE1002187CCD9007336AE /* Assets.xcassets */; };
 		30CDE1042187CCD9007336AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CDE1022187CCD9007336AE /* LaunchScreen.storyboard */; };
 		30CDE10F2187CCDA007336AE /* Points_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE10E2187CCDA007336AE /* Points_CalculatorTests.swift */; };
 		30CDE11A2187CCDA007336AE /* Points_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE1192187CCDA007336AE /* Points_CalculatorUITests.swift */; };
@@ -64,18 +77,31 @@
 		3091CB20218B891200300283 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		3091CB22218B8A5300300283 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		3091CB26218B8A7600300283 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		3091CB29218B997A00300283 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = SOURCE_ROOT; };
-		3091CB2A218B997A00300283 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = SOURCE_ROOT; };
-		3091CB2B218B997A00300283 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = SOURCE_ROOT; };
+		3091CB29218B997A00300283 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = "Points Calculator/Images/add.png"; sourceTree = SOURCE_ROOT; };
+		3091CB2A218B997A00300283 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = "Points Calculator/Images/logo.jpg"; sourceTree = SOURCE_ROOT; };
+		3091CB2B218B997A00300283 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "Points Calculator/Images/menu.png"; sourceTree = SOURCE_ROOT; };
 		3091CB2F218B9CBF00300283 /* DecathlonEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecathlonEntryViewController.swift; sourceTree = "<group>"; };
 		3091CB33218BB49B00300283 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		3091CB35218C1EBD00300283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3091CB38218C202C00300283 /* logo_60.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_60.jpeg; sourceTree = SOURCE_ROOT; };
+		3091CB39218C202C00300283 /* logo_40.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_40.jpeg; sourceTree = SOURCE_ROOT; };
+		3091CB3A218C202C00300283 /* logo_58.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_58.jpeg; sourceTree = SOURCE_ROOT; };
+		3091CB3B218C202C00300283 /* logo_20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_20.jpeg; sourceTree = SOURCE_ROOT; };
+		3091CB40218C212D00300283 /* logo_180.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_180.jpeg; sourceTree = "<group>"; };
+		3091CB41218C212D00300283 /* logo_80.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_80.jpeg; sourceTree = "<group>"; };
+		3091CB42218C212D00300283 /* logo_120.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_120.jpeg; sourceTree = "<group>"; };
+		3091CB43218C212D00300283 /* logo_87.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_87.jpeg; sourceTree = "<group>"; };
+		3091CB48218C226400300283 /* logo_167.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_167.jpeg; sourceTree = "<group>"; };
+		3091CB49218C226400300283 /* logo_76.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_76.jpeg; sourceTree = "<group>"; };
+		3091CB4A218C226400300283 /* logo_29.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_29.jpeg; sourceTree = "<group>"; };
+		3091CB4B218C226400300283 /* logo_152.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_152.jpeg; sourceTree = "<group>"; };
+		3091CB4C218C226400300283 /* logo_1024.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_1024.jpeg; sourceTree = "<group>"; };
 		30CDE0F22187CCCE007336AE /* Points Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Points Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CDE0F52187CCCE007336AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30CDE0F72187CCCE007336AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		30CDE0F92187CCCE007336AE /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		30CDE0FB2187CCCE007336AE /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		30CDE0FE2187CCCE007336AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		30CDE1002187CCD9007336AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30CDE1032187CCD9007336AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30CDE1052187CCD9007336AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30CDE10A2187CCDA007336AE /* Points CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Points CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,9 +139,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3091CB37218C200600300283 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3091CB4A218C226400300283 /* logo_29.jpeg */,
+				3091CB49218C226400300283 /* logo_76.jpeg */,
+				3091CB4B218C226400300283 /* logo_152.jpeg */,
+				3091CB48218C226400300283 /* logo_167.jpeg */,
+				3091CB4C218C226400300283 /* logo_1024.jpeg */,
+				3091CB41218C212D00300283 /* logo_80.jpeg */,
+				3091CB43218C212D00300283 /* logo_87.jpeg */,
+				3091CB42218C212D00300283 /* logo_120.jpeg */,
+				3091CB40218C212D00300283 /* logo_180.jpeg */,
+				3091CB3B218C202C00300283 /* logo_20.jpeg */,
+				3091CB39218C202C00300283 /* logo_40.jpeg */,
+				3091CB3A218C202C00300283 /* logo_58.jpeg */,
+				3091CB38218C202C00300283 /* logo_60.jpeg */,
+				3091CB29218B997A00300283 /* add.png */,
+				3091CB2A218B997A00300283 /* logo.jpg */,
+				3091CB2B218B997A00300283 /* menu.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		30CDE0E92187CCCE007336AE = {
 			isa = PBXGroup;
 			children = (
+				3091CB35218C1EBD00300283 /* Assets.xcassets */,
 				3091CB26218B8A7600300283 /* SnapKit.framework */,
 				3091CB22218B8A5300300283 /* Eureka.framework */,
 				30CDE0F42187CCCE007336AE /* Points Calculator */,
@@ -138,15 +188,12 @@
 		30CDE0F42187CCCE007336AE /* Points Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				3091CB29218B997A00300283 /* add.png */,
-				3091CB2A218B997A00300283 /* logo.jpg */,
-				3091CB2B218B997A00300283 /* menu.png */,
+				3091CB37218C200600300283 /* Images */,
 				30CDE0F52187CCCE007336AE /* AppDelegate.swift */,
 				30CDE0F72187CCCE007336AE /* RootViewController.swift */,
 				30CDE0F92187CCCE007336AE /* DataViewController.swift */,
 				30CDE0FB2187CCCE007336AE /* ModelController.swift */,
 				30CDE0FD2187CCCE007336AE /* Main.storyboard */,
-				30CDE1002187CCD9007336AE /* Assets.xcassets */,
 				30CDE1022187CCD9007336AE /* LaunchScreen.storyboard */,
 				30CDE1052187CCD9007336AE /* Info.plist */,
 				3091CB20218B891200300283 /* TitleView.swift */,
@@ -279,12 +326,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3091CB44218C212D00300283 /* logo_180.jpeg in Resources */,
+				3091CB4D218C226400300283 /* logo_167.jpeg in Resources */,
 				30CDE1042187CCD9007336AE /* LaunchScreen.storyboard in Resources */,
 				3091CB2D218B997A00300283 /* logo.jpg in Resources */,
+				3091CB46218C212D00300283 /* logo_120.jpeg in Resources */,
+				3091CB3F218C202C00300283 /* logo_20.jpeg in Resources */,
+				3091CB3E218C202C00300283 /* logo_58.jpeg in Resources */,
+				3091CB50218C226400300283 /* logo_152.jpeg in Resources */,
 				3091CB2E218B997A00300283 /* menu.png in Resources */,
-				30CDE1012187CCD9007336AE /* Assets.xcassets in Resources */,
 				30CDE0FF2187CCCE007336AE /* Main.storyboard in Resources */,
+				3091CB51218C226400300283 /* logo_1024.jpeg in Resources */,
+				3091CB3D218C202C00300283 /* logo_40.jpeg in Resources */,
+				3091CB47218C212D00300283 /* logo_87.jpeg in Resources */,
+				3091CB45218C212D00300283 /* logo_80.jpeg in Resources */,
+				3091CB36218C1EBD00300283 /* Assets.xcassets in Resources */,
+				3091CB4E218C226400300283 /* logo_76.jpeg in Resources */,
 				3091CB2C218B997A00300283 /* add.png in Resources */,
+				3091CB3C218C202C00300283 /* logo_60.jpeg in Resources */,
+				3091CB4F218C226400300283 /* logo_29.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
