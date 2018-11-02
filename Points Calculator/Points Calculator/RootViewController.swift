@@ -10,11 +10,11 @@ import UIKit
 
 class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
-    var pageViewController: DecathlonEntryViewController?
+    var pageViewController: EntryViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pageViewController = DecathlonEntryViewController(isDec:true)
+        self.pageViewController = HeptathlonEntryViewController(isDec:false)
         //self.pageViewController!.delegate = self
         self.addChild(self.pageViewController!)
         self.view.addSubview(self.pageViewController!.view)

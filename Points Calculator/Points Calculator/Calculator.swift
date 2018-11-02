@@ -8,19 +8,25 @@
 
 import Foundation
 
-enum HepEvent : String {
-    case hurdles = "100mH"
-    case HJ = "High Jump"
-    case SP = "Shot Put"
-    case twoHundy = "200m"
+enum Event : String {
+    case hundy = "100m"
     case LJ = "Long Jump"
+    case SP = "Shot Put"
+    case HJ = "High Jump"
+    case fourHundy = "400m"
+    case hurdles = "110mH"
+    case disc = "Discus"
+    case PV = "Pole Vault"
     case Jav = "Javelin"
+    case fifteen = "1500m"
+    case hundyHurdles = "100mH"
+    case twoHundy = "200m"
     case eightHundy = "800m"
 
-    func getPoints(result: Double) -> Int {
+    func getHepPoints(result: Double) -> Int {
         var pointsDouble : Double = 0
         switch self {
-        case .hurdles:
+        case .hundyHurdles:
             pointsDouble = 9.23076 * pow((26.7 - result),1.835)
         case .HJ:
             pointsDouble = 1.84523 * pow((result*100 - 75),1.348)
@@ -34,48 +40,17 @@ enum HepEvent : String {
             pointsDouble = 15.9803 * pow((result - 3.8),1.04)
         case .eightHundy:
             pointsDouble = 0.11193 * pow((254 - result),1.88)
+        default:
+            fatalError("Events overlapping")
         }
-        if pointsDouble.isNaN || pointsDouble.isInfinite {
-            return -1
-        } else {
-            return min(max(Int(pointsDouble),0),10000)
-        }
+        return checkPoints(pointsDouble)
     }
-    func getPoints (result: String) -> Int {
-        if result == "" { return -1 }
-        if result.contains(":") {
-            var time = result.split(separator: ":")
-            if time.count > 1 {
-                if let minutes = Double(time[0]), let seconds = Double(time[1]) {
-                    return getPoints(result: minutes * 60 + seconds)
-                } else {
-                    return -1
-                }
-            } else {
-                return -1
-            }
-        } else if let result = Double(result) {
-            return getPoints(result: result)
-        } else {
-            return -1
-        }
+
+    func getHepPoints(result: String) -> Int {
+        return getPoints(result: result, isDec: false)
     }
-}
 
-
-enum DecEvent : String {
-    case hundy = "100m"
-    case LJ = "Long Jump"
-    case SP = "Shot Put"
-    case HJ = "High Jump"
-    case fourHundy = "400m"
-    case hurdles = "110mH"
-    case disc = "Discus"
-    case PV = "Pole Vault"
-    case Jav = "Javelin"
-    case fifteen = "1500m"
-    
-    func getPoints(result: Double) -> Int {
+    func getDecPoints(result: Double) -> Int {
         var pointsDouble : Double = 0
         switch self {
         case .hundy:
@@ -98,31 +73,48 @@ enum DecEvent : String {
             pointsDouble = 10.14 * pow((result - 7),1.08)
         case .fifteen:
             pointsDouble = 0.03768 * pow((480 - result),1.85)
+        default:
+            fatalError("Events overlapping")
         }
-        if pointsDouble.isNaN || pointsDouble.isInfinite {
-            return -1
-        } else {
-            return min(max(Int(pointsDouble),0),10000)
-        }
+        return checkPoints(pointsDouble)
     }
-    
-    func getPoints(result: String) -> Int {
+
+    func getDecPoints(result: String) -> Int {
+        return getPoints(result: result, isDec: true)
+    }
+
+    func getPoints(result: String, isDec: Bool) -> Int {
         if result == "" { return -1 }
+        // Check for result in minute format (ex. 4:20 for 4m20s)
         if result.contains(":") {
             var time = result.split(separator: ":")
-            if time.count > 1 {
+            if time.count == 2 {
                 if let minutes = Double(time[0]), let seconds = Double(time[1]) {
-                    return getPoints(result: minutes * 60 + seconds)
-                } else {
-                    return -1
+                    if isDec {
+                        return getDecPoints(result: minutes * 60 + seconds)
+                    } else {
+                        return getHepPoints(result: minutes * 60 + seconds)
+                    }
                 }
-            } else {
-                return -1
             }
-        } else if let result = Double(result) {
-            return getPoints(result: result)
-        } else {
             return -1
+        }
+        // Check for time in second format (ex. 11.13 for 11s130ms
+        if let result = Double(result) {
+            if isDec {
+                return getDecPoints(result: result)
+            } else {
+                return getHepPoints(result: result)
+            }
+        }
+        return -1
+    }
+
+    private func checkPoints(_ points: Double) -> Int {
+        if points.isNaN || points.isInfinite || points > Double(Constants.Points.MaxPoints) {
+            return -1
+        } else {
+            return max(Int(points),0)
         }
     }
 }

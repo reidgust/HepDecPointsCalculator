@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Points Calculator/DecathlonEntryViewController.swift"
-            timestampString = "562832025.0953521"
+            timestampString = "562864921.14215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "setupEvent(row:event:index:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -31,6 +31,7 @@
 		3091CB4F218C226400300283 /* logo_29.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB4A218C226400300283 /* logo_29.jpeg */; };
 		3091CB50218C226400300283 /* logo_152.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB4B218C226400300283 /* logo_152.jpeg */; };
 		3091CB51218C226400300283 /* logo_1024.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3091CB4C218C226400300283 /* logo_1024.jpeg */; };
+		3091CB53218C922B00300283 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091CB52218C922B00300283 /* Constants.swift */; };
 		30CDE0F62187CCCE007336AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0F52187CCCE007336AE /* AppDelegate.swift */; };
 		30CDE0F82187CCCE007336AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0F72187CCCE007336AE /* RootViewController.swift */; };
 		30CDE0FA2187CCCE007336AE /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDE0F92187CCCE007336AE /* DataViewController.swift */; };
@@ -96,6 +97,7 @@
 		3091CB4A218C226400300283 /* logo_29.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_29.jpeg; sourceTree = "<group>"; };
 		3091CB4B218C226400300283 /* logo_152.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_152.jpeg; sourceTree = "<group>"; };
 		3091CB4C218C226400300283 /* logo_1024.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_1024.jpeg; sourceTree = "<group>"; };
+		3091CB52218C922B00300283 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30CDE0F22187CCCE007336AE /* Points Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Points Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CDE0F52187CCCE007336AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30CDE0F72187CCCE007336AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				3091CB20218B891200300283 /* TitleView.swift */,
 				3091CB2F218B9CBF00300283 /* DecathlonEntryViewController.swift */,
 				3091CB33218BB49B00300283 /* Calculator.swift */,
+				3091CB52218C922B00300283 /* Constants.swift */,
 			);
 			path = "Points Calculator";
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				30CDE0FA2187CCCE007336AE /* DataViewController.swift in Sources */,
 				30CDE0F62187CCCE007336AE /* AppDelegate.swift in Sources */,
 				3091CB21218B891200300283 /* TitleView.swift in Sources */,
+				3091CB53218C922B00300283 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
