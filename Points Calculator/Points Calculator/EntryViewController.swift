@@ -51,6 +51,18 @@ class EntryViewController: FormViewController {
             +++ Section()
             <<< LabelRow("Day 2")
             <<< LabelRow("Overall")
+            /*<<< PushRow<String>() {
+                $0.title = "Athlete"
+                $0.options = ["Bill","Greg","Timmy"]
+                $0.value = ""
+                $0.selectorTitle = "Choose an Athlete"
+                $0.tag = "AthleteSelect"
+                $0.onPresent({ (from, to) in
+                    to.dismissOnSelection = false
+                    to.dismissOnChange = true
+                })
+            }*/
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
