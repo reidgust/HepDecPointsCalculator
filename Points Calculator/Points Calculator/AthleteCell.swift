@@ -10,12 +10,27 @@ import Foundation
 import Eureka
 
 
-class AthleteCell : UITableViewCell {
+class AthleteCell : UITableViewCell{
     var athlete : Athlete?
     var fullNameLbl = CellLabel.makeLabel()
     var teamLbl = CellLabel.makeLabel()
     var eventLbl = CellLabel.makeLabel()
     var birthDateLbl = CellLabel.makeLabel()
+    
+    /*
+ let deleteAction = SwipeAction(
+ style: .destructive,
+ title: "Delete",
+ handler: { (action, row, completionHandler) in
+ //add your code here.
+ //make sure you call the completionHandler once done.
+ completionHandler?(true)
+ })
+ deleteAction.image = UIImage(named: "icon-trash")
+ 
+ $0.trailingSwipe.actions = [deleteAction]
+ $0.trailingSwipe.performsFirstActionWithFullSwipe = true
+*/
     
     convenience init(){
         self.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "AthCell")
@@ -25,7 +40,7 @@ class AthleteCell : UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    required override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(fullNameLbl)
         self.addSubview(eventLbl)

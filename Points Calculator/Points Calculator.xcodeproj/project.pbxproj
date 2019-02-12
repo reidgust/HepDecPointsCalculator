@@ -19,6 +19,7 @@
 		305B8C66221173E0008D92B3 /* CellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B8C65221173E0008D92B3 /* CellLabel.swift */; };
 		305B8C6822117DFF008D92B3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B8C6722117DFF008D92B3 /* Result.swift */; };
 		305B8C6A22117F19008D92B3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B8C6922117F19008D92B3 /* Event.swift */; };
+		305B8C6C2212EE83008D92B3 /* AthleteEurekaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B8C6B2212EE83008D92B3 /* AthleteEurekaRow.swift */; };
 		3087250921F36FA900420DBB /* NewAthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3087250821F36FA900420DBB /* NewAthleteViewController.swift */; };
 		3087250B21F370B800420DBB /* NewMeetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3087250A21F370B800420DBB /* NewMeetViewController.swift */; };
 		3087250D21F3749D00420DBB /* AthleteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3087250C21F3749D00420DBB /* AthleteListViewController.swift */; };
@@ -96,6 +97,7 @@
 		305B8C65221173E0008D92B3 /* CellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLabel.swift; sourceTree = "<group>"; };
 		305B8C6722117DFF008D92B3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		305B8C6922117F19008D92B3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		305B8C6B2212EE83008D92B3 /* AthleteEurekaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteEurekaRow.swift; sourceTree = "<group>"; };
 		3087250821F36FA900420DBB /* NewAthleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAthleteViewController.swift; sourceTree = "<group>"; };
 		3087250A21F370B800420DBB /* NewMeetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMeetViewController.swift; sourceTree = "<group>"; };
 		3087250C21F3749D00420DBB /* AthleteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteListViewController.swift; sourceTree = "<group>"; };
@@ -217,8 +219,9 @@
 				305B8C5B220DEEA3008D92B3 /* Meet.swift */,
 				305B8C6922117F19008D92B3 /* Event.swift */,
 				305B8C6722117DFF008D92B3 /* Result.swift */,
-				305B8C4A220C747E008D92B3 /* MainMenuViewController.swift */,
+				305B8C6B2212EE83008D92B3 /* AthleteEurekaRow.swift */,
 				3091CB2F218B9CBF00300283 /* CalculatorViewController.swift */,
+				305B8C4A220C747E008D92B3 /* MainMenuViewController.swift */,
 				3087250C21F3749D00420DBB /* AthleteListViewController.swift */,
 				3087250821F36FA900420DBB /* NewAthleteViewController.swift */,
 				305B8C50220CC80B008D92B3 /* MeetListViewController.swift */,
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				305B8C6822117DFF008D92B3 /* Result.swift in Sources */,
+				305B8C6C2212EE83008D92B3 /* AthleteEurekaRow.swift in Sources */,
 				305B8C4B220C747E008D92B3 /* MainMenuViewController.swift in Sources */,
 				3091CB30218B9CBF00300283 /* CalculatorViewController.swift in Sources */,
 				305B8C53220D8C81008D92B3 /* ResultListViewController.swift in Sources */,

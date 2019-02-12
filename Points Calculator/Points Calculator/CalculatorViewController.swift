@@ -8,8 +8,80 @@
 
 import Foundation
 import Eureka
+import MediaPlayer
 import SnapKit
 
+/*// MusicRow
+public final class MusicRow : SelectorRow<MPMediaItemCollection, PushSelectorCell<MPMediaItemCollection>, AddMusicViewController>, RowType {
+    public required init(tag: String?) {
+        super.init(tag: tag)
+        presentationMode = .Show(controllerProvider: ControllerProvider.Callback { return AddMusicViewController(){ _ in } }, completionCallback: { vc in vc.navigationController?.popViewControllerAnimated(true) })
+        displayValueFor = {
+            guard var musicTitle = $0 else { return "" }
+            musicTitle = musicTemp!
+            let representativeItem = musicTitle.representativeItem
+            print("representativeItem = \(representativeItem)")
+            let representativeItemTitle = representativeItem?.title
+            return  "\(representativeItemTitle)"
+        }
+    }
+}
+
+// MusicViewController
+public class AddMusicViewController : UIViewController, TypedRowControllerType, MPMediaPickerControllerDelegate {
+    
+    public var row: RowOf<MPMediaItemCollection>!
+    public var completionCallback : ((UIViewController) -> ())?
+    
+    lazy var musicPicker : MPMediaPickerController = { [unowned self] in
+        let mediaPicker = MPMediaPickerController.self(mediaTypes:.Music)
+        return mediaPicker
+        }()
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience public init(_ callback: (UIViewController) -> ()){
+        self.init(nibName: nil, bundle: nil)
+        completionCallback = callback
+    }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(musicPicker.view)
+        
+        musicPicker.delegate = self
+        musicPicker.allowsPickingMultipleItems = true
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
+    
+    // After selection, store the data into a temporary variable
+    public func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        musicTemp = nil
+        musicTemp = mediaItemCollection
+        if musicTemp == nil {
+            noMusic = true
+        } else {
+            noMusic = false
+            row.value? = musicTemp!
+        }
+        completionCallback?(self)
+    }
+    
+    // Cancel mediaPickerController
+    public func mediaPickerDidCancel(mediaPicker: MPMediaPickerController){
+        // Dismiss the picker if the user canceled
+        noMusic = true
+        completionCallback?(self)
+    }
+}
+*/
 class CalculatorViewController: FormViewController {
     var isDec : Bool = false
     var decResult : DecResult?
@@ -44,8 +116,20 @@ class CalculatorViewController: FormViewController {
             <<< LabelRow("Day 2")
             <<< LabelRow("Overall")
             +++ Section()
+            <<< PushRow<Athlete>() {
+                $0.options = AthleteList
+                $0.displayValueFor = { value in
+                    if value == nil {return nil}
+                    return value!.fullName()
+                }
+                $0.value = nil
+                }/*.onPresent({ (_, AthleteListViewController) -> () in
+                    AthleteListViewController.selectableRowCellUpdate = { cell, row in
+                        cell.contentView.backgroundColor = .orangeColor()
+                    }
+                })*/
             <<< PushRow<String>() {
-                $0.title = "Athletes"
+                $0.title = "Athlete"
                 $0.options = { () in
                     var rtn : [String] = []
                     for athl in AthleteList {
@@ -60,7 +144,7 @@ class CalculatorViewController: FormViewController {
                 $0.tag = "AthleteSelect"
                 $0.onPresent({ (from, to) in
                     to.dismissOnSelection = false
-                    to.dismissOnChange = true
+                    to.dismissOnChange = false
                 })
             }
         
