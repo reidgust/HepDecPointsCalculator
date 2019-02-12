@@ -14,7 +14,20 @@ struct Constants {
     struct colors {
         static let background = Constants.Photon.Ink
     }
-
+    
+    struct Segues {
+        static let MainToAthlete = "MainToAth"
+        static let MainToCalculator = "MainToCalc"
+        static let MainToMeet = "MainToMeet"
+        static let AthleteToNewAthlete = "AthToNewAth"
+        static let AthleteToResult = "AthToResult"
+        static let MeetToNewMeet = "MeetToNewMeet"
+        static let MeetToResults = "MeetToResult"
+        static let ResultToCalculator = "ResultToCalc"
+        static let CalculatorToNewAth = "CalcToNewAth"
+        static let CalculatorToNewMeet = "CalcToNewMeet"
+    }
+    
     struct Photon {
         static let Magenta = UIColor(rgb: 0xff1ad9)
         static let Purple = UIColor(rgb: 0xc069ff)
