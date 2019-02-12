@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import Eureka
 
-class AthleteListViewController : UITableViewController {
+open class AthleteListViewController : SelectorViewController {
 
+    public var row: RowOf<Athlete>!
     var heightMap : [IndexPath : CGFloat] = [:]
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 10.0)
         tableView.rowHeight = UITableView.automaticDimension
@@ -24,22 +25,22 @@ class AthleteListViewController : UITableViewController {
         tableView.register(AthleteCell.self, forCellReuseIdentifier: "athleteCell")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         super.viewWillAppear(animated)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AthleteList.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let athVC = NewAthleteViewController(athlete: AthleteList[indexPath.row],index: indexPath.row)
         athVC.title = "Edit Athlete"
         navigationController?.pushViewController(athVC, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "athleteCell") as! AthleteCell
         cell.setAthlete(athl: AthleteList[indexPath.row])
         cell.backgroundColor = .black
@@ -53,7 +54,7 @@ class AthleteListViewController : UITableViewController {
         navigationController?.pushViewController(athVC, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightMap[indexPath] ?? UITableView.automaticDimension
     }
 }

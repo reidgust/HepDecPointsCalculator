@@ -7,7 +7,7 @@
 //
 import Foundation
 
-class Athlete : Equatable{
+open class Athlete : Equatable{
     
     public var firstName : String
     public var lastName : String
@@ -15,7 +15,7 @@ class Athlete : Equatable{
     public var isDec : Bool
     public var birthDate : Date
     
-    init() {
+    public init() {
         firstName = ""
         lastName = ""
         team = ""
@@ -23,11 +23,11 @@ class Athlete : Equatable{
         birthDate = Date.init(timeIntervalSince1970: 0)
     }
     
-    func fullName() -> String {
+    open func fullName() -> String {
         return firstName + " " + lastName
     }
     
-    static func == (lhs: Athlete, rhs: Athlete) -> Bool {
+    public static func == (lhs: Athlete, rhs: Athlete) -> Bool {
         return lhs.fullName() == rhs.fullName()
     }
 }

@@ -116,30 +116,22 @@ class CalculatorViewController: FormViewController {
             <<< LabelRow("Day 2")
             <<< LabelRow("Overall")
             +++ Section()
+            <<< AthleteRow() {
+                $0.options = AthleteList
+                $0.value = nil
+                }/*.onPresent({ (_, presenterViewController) -> () in
+                    AthleteListViewController.selectableRowCellUpdate = { cell, row in
+                        cell.contentView.backgroundColor = .orangeColor()
+                    }
+                })*/
             <<< PushRow<Athlete>() {
+                $0.title = "Athlete"
                 $0.options = AthleteList
                 $0.displayValueFor = { value in
                     if value == nil {return nil}
                     return value!.fullName()
                 }
                 $0.value = nil
-                }/*.onPresent({ (_, AthleteListViewController) -> () in
-                    AthleteListViewController.selectableRowCellUpdate = { cell, row in
-                        cell.contentView.backgroundColor = .orangeColor()
-                    }
-                })*/
-            <<< PushRow<String>() {
-                $0.title = "Athlete"
-                $0.options = { () in
-                    var rtn : [String] = []
-                    for athl in AthleteList {
-                        if(athl.isDec == self.isDec) {
-                            rtn.append(athl.fullName())
-                        }
-                    }
-                    return rtn
-                }()
-                $0.value = ""
                 $0.selectorTitle = "Choose an Athlete"
                 $0.tag = "AthleteSelect"
                 $0.onPresent({ (from, to) in

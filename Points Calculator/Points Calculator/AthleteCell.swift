@@ -9,13 +9,21 @@
 import Foundation
 import Eureka
 
+final class AthleteRow: _PushRow<AthleteCell,AthleteListViewController>, RowType {
+    public required init(tag: String?) {
+        super.init(tag: tag)
+        presentationMode = PresentationMode<AthleteListViewController>.Show(controllerProvider: ControllerProvider.Callback { return AthleteListViewController(){ _ in } }, completionCallback: { vc in vc.navigationController?.popViewControllerAnimated(true) })
+    }
+        
+}
 
-class AthleteCell : UITableViewCell{
+final class AthleteCell : Cell<Athlete>, CellType PushSelectorCell<Athlete>{
     var athlete : Athlete?
     var fullNameLbl = CellLabel.makeLabel()
     var teamLbl = CellLabel.makeLabel()
     var eventLbl = CellLabel.makeLabel()
     var birthDateLbl = CellLabel.makeLabel()
+    var placeHolderLbl = CellLabel.makeLabel()
     
     /*
  let deleteAction = SwipeAction(
@@ -40,21 +48,37 @@ class AthleteCell : UITableViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    required init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+    
+    override func setup() {
+        //super.init(style: style, reuseIdentifier: reuseIdentifier)
+        height = { 51.0 }
         self.addSubview(fullNameLbl)
         self.addSubview(eventLbl)
         self.addSubview(teamLbl)
         self.addSubview(birthDateLbl)
+        self.addSubview(placeHolderLbl)
         makeFullNameLabel()
         makeEventLabel()
         makeBirthDateLabel()
         makeTeamLabel()
+        makePlaceHolderLabel()
+        backgroundColor = .black
     }
     
-    func setAthlete(athl : Athlete) { athlete = athl}
+    override func update() {
+        setAthlete(athl: row.value)
+    }
+    
+    func setAthlete(athl : Athlete?) {
+        athlete = athl
+    }
     
     func labelsForAthlete() {
+        placeHolderLbl.text = ""
         fullNameLbl.text = athlete!.fullName()
         eventLbl.text = athlete!.isDec ? "Dec" : "Hep"
         let calendar = Calendar.current
@@ -75,7 +99,21 @@ class AthleteCell : UITableViewCell{
             }
             teamLbl.text = abbrev.uppercased()
         }
-        
+    }
+
+    func setLabelsToPlaceHolder() {
+        birthDateLbl.text = nil
+        fullNameLbl.text = nil
+        teamLbl.text = nil
+        eventLbl.text = nil
+        placeHolderLbl.text = "Select Athlete"
+    }
+
+    func makePlaceHolderLabel() {
+        placeHolderLbl.snp.makeConstraints{ row in
+            row.left.top.height.width.equalToSuperview()
+        }
+        placeHolderLbl.textAlignment = .center
     }
 
     func makeFullNameLabel() {
@@ -113,9 +151,8 @@ class AthleteCell : UITableViewCell{
     }
     
     override func layoutSubviews() {
+        if athlete != nil { labelsForAthlete() }
+        else { setLabelsToPlaceHolder() }
         super.layoutSubviews()
-        if athlete != nil {
-            labelsForAthlete()
-        }
     }
 }
